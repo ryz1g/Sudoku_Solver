@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//Function to check whether a state of Sudoku is valid
 int isValidSudoku(const vector<vector<char>> &A) {
     unordered_map<char,int> mp;
     for(vector<char> s:A) {
@@ -46,6 +47,7 @@ int isValidSudoku(const vector<vector<char>> &A) {
     return 1;
 }
 
+//Recursive function
 void recur(vector<vector<int>> &sp, int depth, int blank, vector<vector<char>> A, vector<vector<char>> &ans) {
     if(!ans.empty()) return;
     if(depth==blank) {
@@ -62,11 +64,8 @@ void recur(vector<vector<int>> &sp, int depth, int blank, vector<vector<char>> A
     }
 }
 
+//Function to be called for solving a Sudoku state
 void solveSudoku(vector<vector<char> > &A) {
-    // Do not write main() function.
-    // Do not read input, instead use the arguments to the function.
-    // Do not print the output, instead return values as specified
-    // Still have a doubt. Checkout www.interviewbit.com/pages/
     int blank=0;
     vector<vector<int>> sp;
     vector<vector<char>> ans;
